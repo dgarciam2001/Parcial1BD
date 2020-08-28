@@ -199,7 +199,7 @@ public class MantenimientoPuesto extends javax.swing.JInternalFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "compromete");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "compromete");
             PreparedStatement pst = cn.prepareStatement("insert into puesto values(?,?,?,?)");
 
             pst.setString(1, txtIdPuesto.getText().trim());
@@ -221,7 +221,7 @@ public class MantenimientoPuesto extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "compromete");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "compromete");
             PreparedStatement pst = cn.prepareStatement("delete from puesto where IdPuesto = ?");
 
             pst.setString(1, txtBuscar.getText().trim());
@@ -246,7 +246,7 @@ public class MantenimientoPuesto extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
 
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "compromete");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "compromete");
             PreparedStatement pst = cn.prepareStatement("select * from puesto where IdPuesto = ?");
             pst.setString(1, txtBuscar.getText().trim());
 
@@ -272,7 +272,7 @@ public class MantenimientoPuesto extends javax.swing.JInternalFrame {
         try {
             String Id = txtBuscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "compromete");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "compromete");
             PreparedStatement pst = cn.prepareStatement("update puesto set IdPuesto = ?, Nombrepuesto = ?, IdDepartamento = ?, Idvendedor = ? where IdPuesto = " + Id);
 
             pst.setString(1, txtIdPuesto.getText().trim());

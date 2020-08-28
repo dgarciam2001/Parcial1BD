@@ -14,11 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class Contenedor extends javax.swing.JFrame {
   
-    private MantenimientoBodega mantenimientoBodega;
-    private MantenimientoCliente mantenimientoCliente;
-    private MantenimientoDepartamento mantenimientoDepartamento;
-    private MantenimientoProducto mantenimientoProducto;
-    private MantenimientoProveedor mantenimientoProveedor;
+   
     private MantenimientoPuesto mantenimientoPuesto;
     private MantenimientoSucursal mantenimientoSucursal;
     private MantenimientoUsuario mantenimientoUsuario;
@@ -52,6 +48,7 @@ public class Contenedor extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
 
         jMenu4.setText("jMenu4");
 
@@ -81,7 +78,7 @@ public class Contenedor extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Contenedor");
+        jMenu2.setText("Catalogo");
 
         jMenuItem4.setText("MantenimientoDepartamento");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -117,14 +114,17 @@ public class Contenedor extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("jMenu3");
+        jMenu3.setText("Proceso");
         jMenuBar1.add(jMenu3);
 
-        jMenu5.setText("jMenu5");
+        jMenu5.setText("Informe");
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText("jMenu6");
+        jMenu6.setText("Herramientas");
         jMenuBar1.add(jMenu6);
+
+        jMenu7.setText("Ayuda");
+        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -175,11 +175,7 @@ public class Contenedor extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        mantenimientoDepartamento =  new MantenimientoDepartamento();
-        jDesktopPane1.add(mantenimientoDepartamento);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = mantenimientoDepartamento.getSize();
-        mantenimientoDepartamento.setLocation((desktopSize.width-FrameSize.width)/2,(desktopSize.height-FrameSize.height)/2);
+    
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
@@ -226,6 +222,7 @@ public class Contenedor extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;

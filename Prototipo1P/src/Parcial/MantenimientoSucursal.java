@@ -169,7 +169,7 @@ public class MantenimientoSucursal extends javax.swing.JInternalFrame {
         } else {
 
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("delete from sucursal where CodigoSucursal = ?");
 
                 pst.setString(1, cboBuscar.getSelectedItem().toString());
@@ -193,7 +193,7 @@ public class MantenimientoSucursal extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "NO PUEDE HABER CAMPOS VACIOS", "WARNING", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("insert into sucursal values(?,?,?)");
 
                 pst.setString(1, txtId.getText().trim());
@@ -219,7 +219,7 @@ public class MantenimientoSucursal extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "NO SE INGRESO NINGUN MAESTRO DE BUSQUEDA");
         } else {
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("select * from sucursal where CodigoSucursal = ?");
                 pst.setString(1, cboBuscar.getSelectedItem().toString());
 
@@ -254,7 +254,7 @@ public class MantenimientoSucursal extends javax.swing.JInternalFrame {
             try {
                 String ID = cboBuscar.getSelectedItem().toString();
 
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("update sucursal set CodigoSucursal = ?, NombreSucursal=?, DireccionSucursal=?, where CodigoSucursal = " + ID);
 
                 pst.setString(1, txtId.getText().trim());
@@ -276,7 +276,7 @@ public class MantenimientoSucursal extends javax.swing.JInternalFrame {
     public void buscarBodega() {
         try {
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select CodigoSucursal from sucursal");
             ResultSet rs = pst.executeQuery();
 

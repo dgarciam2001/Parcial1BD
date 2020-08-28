@@ -220,7 +220,7 @@ public class MantenimientoVendedor extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "NO SE INGRESO NINGUN MAESTRO DE BUSQUEDA");
         } else {
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from vendedores where Idvendedor = ?");
             pst.setString(1, cboBuscar.getSelectedItem().toString());
 
@@ -256,7 +256,7 @@ public class MantenimientoVendedor extends javax.swing.JInternalFrame {
         } else {
 
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("delete from vendedores where Idvendedor = ?");
 
                 pst.setString(1, cboBuscar.getSelectedItem().toString());
@@ -287,7 +287,7 @@ public class MantenimientoVendedor extends javax.swing.JInternalFrame {
            try {
             String ID = cboBuscar.getSelectedItem().toString();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("update vendedores set Idvendedor = ?, nombreVendedor=?, telefonoVendedor=?, correoVendedor=?, estadoVendedor=?, edadVendedor=?, sueldoVendedor=?  where Idvendedor = " + ID);
 
             pst.setString(1, txtId.getText().trim());
@@ -321,7 +321,7 @@ public class MantenimientoVendedor extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "NO PUEDE HABER CAMPOS VACIOS","WARNING",JOptionPane.WARNING_MESSAGE);
         } else {
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("insert into vendedores values(?,?,?,?,?,?,?)");
 
             pst.setString(1, txtId.getText().trim());
@@ -350,7 +350,7 @@ public class MantenimientoVendedor extends javax.swing.JInternalFrame {
      public void buscarVendedores(){
             try{
           
-        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/cafeteria", "root", "Rochi1523");
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/parcial", "root", "Rochi1523");
         PreparedStatement pst = cn.prepareStatement("select IdVendedor from vendedores");
             ResultSet rs = pst.executeQuery();
 
